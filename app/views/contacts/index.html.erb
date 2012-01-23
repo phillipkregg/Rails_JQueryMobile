@@ -1,0 +1,36 @@
+<div data-role="header">
+	<h2>Contacts</h2>
+</div>
+
+<div data-role="content">
+	<ul data-role="listview">
+		<% @contacts.each do |contact|  %>
+			<li>
+				<%= link_to contact.first_name, contact %>
+				<%= link_to 'edit contact', edit_contact_path(contact), "data-icon" => "gear" %>
+			</li>
+		<% end %>
+	</ul>
+	
+</div>
+
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= contact.first_name %></td>
+    <td><%= contact.last_name %></td>
+    <td><%= contact.phone %></td>
+    <td><%= contact.email %></td>
+    <td><%= contact.address1 %></td>
+    <td><%= contact.address2 %></td>
+    <td><%= contact.zipcode %></td>
+    <td><%= contact.state %></td>
+    <td><%= link_to 'Show', contact %></td>
+    <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+    <td><%= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contact', new_contact_path %>
