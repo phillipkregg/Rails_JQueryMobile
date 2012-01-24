@@ -1,6 +1,12 @@
-<h1>Editing contact</h1>
 
+<div data-role="header">
+	<%= link_to 'Home', contacts_path, "data-icon" => "home", "class" => "ui-btn-left" %>
+	<%= link_to 'Delete', @contact, :method => :delete, "data-icon" => "delete", "class" => "ui-btn-right" %>
+<h1>Editing Contact</h1>
+</div>
+
+<div data-role="content">
 <%= render 'form' %>
+</div>
 
-<%= link_to 'Show', @contact %> |
-<%= link_to 'Back', contacts_path %>
+

@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<div data-role="header">
+	<h1><%= @contact.first_name + " " + @contact.last_name %></h1>
+	<%= link_to 'Home', contacts_path, "class" => "ui-btn-right" %>
+</div>
+
+<div data-role="content">
 <p>
   <b>First name:</b>
   <%= @contact.first_name %>
@@ -40,6 +46,5 @@
   <%= @contact.state %>
 </p>
 
+</div>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
